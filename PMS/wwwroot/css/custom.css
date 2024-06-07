@@ -1,0 +1,235 @@
+﻿* {
+    font-family: nunito !important;
+}
+
+
+.select2-selection__rendered {
+    display: none;
+}
+
+.sb-sidenav-menu {
+    background: #003600 !important;
+    color: white !important;
+}
+
+    .sb-sidenav-menu #collapseLayouts svg {
+        font-size: 12px !important;
+    }
+
+    .sb-sidenav-menu .nav-link, svg {
+        color: white !important;
+    }
+
+.sb-sidenav .sb-sidenav-menu .nav .sb-sidenav-menu-nested {
+    background: #006600 !important;
+}
+
+.select2-container .select2-selection--single {
+    height: 40px; /* Adjust the height as needed */
+}
+
+
+
+.sb-sidenav-menu .nav-link:hover {
+    color: #003600 !important;
+    background: white !important;
+}
+
+    .sb-sidenav-menu .nav-link:hover svg {
+        color: #003600 !important; /* Change the color to match the text color */
+    }
+
+
+
+#collapseLayouts a {
+    font-size: 15px !important;
+}
+
+#collapseLayouts .nav-link:hover {
+    color: #003600 !important;
+    background: white !important;
+}
+
+.sb-topnav {
+    background: #006600 !important;
+}
+
+#sidebarToggle {
+    background: white !important;
+    color: #006600 !important;
+}
+
+.sb-sidenav .sb-sidenav-menu .nav .sb-sidenav-menu-nested {
+    margin-left: 0px !important;
+}
+
+
+#sidebarToggle svg {
+    color: #006600 !important;
+}
+
+.sb-sidenav-footer {
+    background: #006600 !important;
+    color: white !important;
+}
+
+.btn-primary {
+    background: #006600 !important;
+    border-color: #006600 !important;
+}
+
+.btn-warning {
+    background: #003600 !important;
+    border-color: #003600 !important;
+}
+
+.ctm-login .dropdown-toggle::after {
+    visibility: hidden;
+}
+
+.ctm-login a {
+    color: white !important;
+    font-size: 16px !important;
+}
+
+.breadcrumb-item.active {
+    padding: 10px !important;
+    color: #006600 !important;
+}
+
+#myTable td, th {
+    text-align: left !important;
+}
+
+
+.modal-body label {
+    padding-top: 20px;
+}
+
+.modal-body {
+    padding-top: 0px !important;
+}
+
+
+a {
+    color: #0d6efd;
+    text-decoration: none !important;
+}
+
+    a:hover {
+        color: #0a58ca;
+        text-decoration: none !important;
+    }
+
+
+
+
+/* Define initial style for the button */
+.color-change-button {
+    background-color: red; /* Initial background color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    animation: colorAnimation 1s infinite alternate; /* Apply animation */
+}
+
+/* Define keyframes for the animation */
+@keyframes colorAnimation {
+    0% {
+        background-color: red; /* Start color */
+    }
+
+    100% {
+        background-color: #006600; /* End color */
+    }
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    padding-top: 5px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    margin-top: 5px;
+}
+
+
+/* Report CSS */
+
+#vehilereportform h5 {
+    color: #006600;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+#vehilereportform thead tr {
+    background: #006600;
+    color: #fff;
+}
+
+#vehilereportform tbody tr {
+    background: #282828 !important;
+    color: #fff !important;
+}
+
+#vehoildetailtbl tbody tr {
+    background: #282828 !important;
+    color: #fff !important;
+}
+
+
+
+/*Dashboard SVG */
+.card-header svg {
+    color: #006600 !important;
+}
+
+.table thead tr {
+    background: #006600;
+    color: #fff;
+}
+
+.table tbody tr {
+    background: #282828 !important;
+    color: #fff !important;
+}
+
+.table tbody tr a{
+    background: white !important
+}
+    .table tbody tr a svg {
+      color: black !important;
+    }
+
+
+    .container-fluid {
+    background: silver !important;
+}
+
+footer {
+    background: silver !important;
+}
+
+.sb-nav-fixed #layoutSidenav #layoutSidenav_content {
+    background: silver !important;
+}
+
+footer {
+    padding: 20px 20px;
+}
+
+
+.vehkmstat {
+    margin-top: 7px !important;
+    margin-bottom: 0px;
+}
+
+
+.select2-results__option:hover {
+    background: #006600;
+    color: white;
+}
+
+.select2-container {
+    width: 100% !important;
+}

@@ -1,0 +1,197 @@
+﻿@model List<PMSDB.Models.PatientInfo>
+
+
+<div class="container-fluid px-4">
+    <br /><br />
+   
+    <!-- Modal Add -->
+    <div class="modal fade" id="modal-color" tabindex="-1" role="dialog" aria-hidden="true">
+
+
+
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <h5 class="modal-title">Add New Patient</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-floating mb-3 row">
+                        <div class="col-md-12">
+                            <div class="alert alert-warning alert-dismissible fade show d-none" id="AlertWarning" role="alert">
+                                Please Fill all Fields !!!
+                                <button type="button" class="close" id="WarningClose">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+
+                            <div class="alert alert-success alert-dismissible fade show d-none" id="AlertSuccess" role="alert">
+                                Patient Added Successfully !!!
+                                <button type="button" class="close" id="SuccessClose">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-12">
+                            <label> Name</label>
+                            <input class="form-control" id="name" type="text" placeholder="" />
+                           
+
+                        </div>
+                        <div class="col-md-12">
+                            <label>Phone </label>
+                            <textarea class="form-control" id="phone" type="text" placeholder=""></textarea>
+                        </div> 
+                        
+                        <div class="col-md-12">
+                            <label>Address </label>
+                            <textarea class="form-control" id="address" type="text" placeholder=""></textarea>
+                        </div>
+                        </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btn-color-add">Save </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Edit -->
+    <div class="modal fade" id="modal-color-edit" tabindex="-1" role="dialog" aria-hidden="true">
+
+
+
+
+@* 
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <h5 class="modal-title">Edit Color</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+
+
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-floating mb-3 row">
+                        <div class="col-md-12">
+                            <div class="alert alert-warning alert-dismissible fade show d-none" id="AlertWarning" role="alert">
+                                Please Fill all Fields !!!
+                                <button type="button" class="close" id="WarningClose">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+
+                            <div class="alert alert-success alert-dismissible fade show d-none" id="AlertSuccess" role="alert">
+                                Color Updated Successfully !!!
+                                <button type="button" class="close" id="SuccessClose">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+
+
+
+                        </div>
+
+
+                        <div class="col-md-12">
+                            <label> Name</label>
+                            <input class="form-control" id="id" type="hidden" placeholder="" />
+                            <input class="form-control" id="name" type="text" placeholder="" />
+
+
+                        </div>
+                        <div class="col-md-12">
+                            <label>Description </label>
+                            <textarea class="form-control" id="description"></textarea>
+                        </div>
+ 
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btn-color-edit"> Update </button>
+                </div>
+            </div>
+        </div>
+    *@
+    
+    
+    </div>
+
+
+    <!-- Table -->
+    <div class="row">
+        
+        <div class="col-xl-12">
+            <div class="card mb-4">
+                <div class="card-header">
+                   <div class="row">
+                       <div class="col-md-6">
+                            <h4 class="">User List</h4>
+                       </div>
+
+                       <div class="col-md-6" style="text-align:right">
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#modal-color"> <i class="fas fa-plus"></i> Add New </button>
+                           
+                       </div>
+                   </div>
+
+
+                </div>
+                <div class="card-body">
+
+                    <table id="myTable" class="table table-bordered" style="width: 100% !important;">
+                        <thead>
+                            <tr>
+                                <th>Sr.</th>
+                                <th>Name</th>
+                                <th>Phone </th>
+                                <th>Address </th>
+                                <th>Action </th>
+                            </tr>
+                            
+                        </thead>
+                        <tbody>
+                            @{
+                                var i = 0;
+                            }
+                            @foreach (var Data in Model)
+                            {
+                                i++;
+                                <tr>
+                                    <td id="@Data.Id">@i</td>
+                                    <td>@Data.Name</td>
+                                    <td>@Data.Phone</td>
+                                    <td>@Data.Address</td>
+                                  
+
+                                    <td>
+                                        <a class="btn btn-sm btn-warning color-edit-btn"><i class="fa fa-edit"></i></a>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+    </div>
+    </div> 
+    
+  
+
+</div>

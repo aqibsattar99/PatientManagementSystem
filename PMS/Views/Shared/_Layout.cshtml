@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Patient Management System </title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.0/css/dataTables.dataTables.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="~/css/styles.css" rel="stylesheet">
+    <link href="~/css/custom.css" rel="stylesheet">
+    <link href="~/css/chosen.css" rel="stylesheet">
+
+
+</head>
+
+<body class="sb-nav-fixed">
+
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <!-- Navbar Brand-->
+        <a class="navbar-brand ps-3" href="/"><i class="fas fa-hospital"></i> <b>PMS</b></a>
+        <!-- Sidebar Toggle-->
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+        <!-- Navbar Search-->
+
+        <form style="visibility:hidden;" class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+            <div class="input-group">
+                <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+            </div>
+        </form>
+
+        <!-- Navbar-->
+        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+
+                <li class="nav-item dropdown ctm-login">
+                    <a class="nav-link dropdown-toggle" asp-controller="dashboard" asp-action="index"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+           
+            </ul>
+        </nav>
+
+
+    <!-- Sidebar & Main Section -->
+
+
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <a class="nav-link" asp-controller="Dashboard" asp-action="index">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Dashboard
+                        </a>
+@* 
+    -- DropDown Menu Sample
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts3" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-cog"></i></div>
+                            Driver
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+
+                        <div class="collapse" id="collapseLayouts3" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+
+                                <a class="nav-link" asp-controller="driver" asp-action="index">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                                    Drivers
+                                </a>
+
+                                <a class="nav-link" asp-controller="VehicleDriverAssignment" asp-action="index">
+                                    <span class="sb-nav-link-icon"><i class="fas fa-sync"></i></span>
+                                    Vehicle Driver Assign
+                                </a>
+
+                            </nav>
+                        </div> *@
+
+
+
+
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts3" aria-expanded="false" aria-controls="collapseLayouts">
+                        <div class="sb-nav-link-icon"><i class="fas fa-cog"></i></div>
+                        Patients
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+
+                        <div class="collapse" id="collapseLayouts3" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+
+                        <a class="nav-link" asp-controller="patients" asp-action="index">
+                        <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                        Add New
+                        </a>
+
+                        <a class="nav-link" asp-controller="VehicleDriverAssignment" asp-action="index">
+                        <span class="sb-nav-link-icon"><i class="fas fa-sync"></i></span>
+                        Appointments
+                        </a>
+
+                        </nav>
+                        </div>
+
+
+
+
+@* 
+    -- Single or Simple NavMenu Link
+                        <a class="nav-link" asp-controller="report" asp-action="index">
+                            <div class="sb-nav-link-icon"><i class="fas fa-list"></i></div>
+                            Patients
+                        </a>
+ *@
+
+
+
+                    </div>
+                </div>
+
+                <div class="sb-sidenav-footer">
+                    <div class="small">Logged in as:</div>
+                    Administrator
+                </div>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                @RenderBody()
+            </main>
+            <footer class=" mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted"> <span style="color: black;">  &copy; Patient Management System - Powered By <b>Medline</b>  </span> </div>
+                        <div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+
+
+    <!-- Website JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <!-- Charts JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="~/assets/demo/chart-area-demo.js"></script>
+    <script src="~/assets/demo/chart-bar-demo.js"></script>
+    <!-- Datatable JS -->
+    <script src="https://cdn.datatables.net/2.0.0/js/dataTables.js"></script>
+    <!-- Select Search CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script src="~/js/dashboard.js"></script>
+    <script src="~/js/configurations.js"></script>
+    <script src="~/js/configformssubmit.js"></script>
+    <script src="~/js/formsubmit.js"></script>
+
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
